@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+    <style>
+        .blockArt {
+            background-color: rgb(182, 68, 37);
+            padding: 30px;
+        }
+
+        body {
+            margin: 20px 100px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // on va écrire dans le body donc on le sélectionne
+        let corpsDuSite = document.querySelector("body");
+        // creation d'une div
+        let maDiv = document.createElement("div");        
+        // ajout d'une class à la div
+        maDiv.className = "blockArt";
+        corpsDuSite.appendChild(maDiv);
+        // creation d'une balise titre h1
+        let monTitre = document.createElement("h1");
+        // ajout de texte
+        monTitre.textContent = "Les chatons c'est mignons !!";
+        maDiv.appendChild(monTitre);
+        // creation d'une image
+        let monImage = document.createElement("img");
+        // ajout de l'attribut src
+        monImage.src = "./chaton.jpeg";
+        maDiv.appendChild(monImage);
+        // modification de width pour être à 100%
+        monImage.style.width = '100%';
+        // creation d'un paragraphe
+        let monParagraphe = document.createElement("p");
+        // ajout de texte
+        monParagraphe.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet fringilla tristique. Suspendisse laoreet dui ac tristique ornare. Morbi sollicitudin massa rhoncus leo rutrum aliquam eu sit amet tortor. Vestibulum auctor rhoncus purus vel sollicitudin. Aliquam aliquam magna in lacus ullamcorper vehicula. Proin quis imperdiet neque. Aenean dui sem, finibus a nunc ultrices, posuere tincidunt leo. Praesent lobortis efficitur sodales.";
+        maDiv.appendChild(monParagraphe);
+        //Ajout des blocks à blockDiv
+       
+        //Ajout de blockDiv au body
+       
+
+    </script>
+</body>
+
+</html>
