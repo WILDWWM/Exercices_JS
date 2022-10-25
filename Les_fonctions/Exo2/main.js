@@ -12,28 +12,30 @@ function ageTool(monTab) {
     age.moyenne = somme / monTab.length;
 
     // Calcul du plus jeune
-    let valeurPlusPetite;
-    for (let j = 0; j < monTab.length; j++) {
-        if (monTab[j] < monTab[j+1]) {
-            valeurPlusPetite = monTab[j];            
-        }
-        else {
-            valeurPlusPetite = monTab[j + 1];
-        }
-    }
-    age.lePlusJeune = valeurPlusPetite;
+    // let valeurPlusPetite;
+    // for (let j = 0; j < monTab.length; j++) {
+    //     if (monTab[j] < monTab[j+1]) {
+    //         valeurPlusPetite = monTab[j];            
+    //     }
+    //     else {
+    //         valeurPlusPetite = monTab[j + 1];
+    //     }
+    // }
+    // age.lePlusJeune = valeurPlusPetite;
+    age.lePlusJeune = monTab.sort()[0];
 
     // Calcul du plus âgé
-    let valeurPlusGrande;
-    for (let k = 0; k < monTab.length; k++) {
-         if (monTab[k] > monTab[k+1]) {
-             valeurPlusGrande = monTab[k];
-        }       
-         else {
-             valeurPlusGrande = monTab[k + 1];
-        }
-    }
-    age.lePlusAge = valeurPlusGrande;
+    // let valeurPlusGrande;
+    // for (let k = 0; k < monTab.length; k++) {
+    //      if (monTab[k] > monTab[k+1]) {
+    //          valeurPlusGrande = monTab[k];
+    //     }       
+    //      else {
+    //          valeurPlusGrande = monTab[k + 1];
+    //     }
+    // }
+    // age.lePlusAge = valeurPlusGrande;
+    age.lePlusAge = monTab.sort()[monTab.length - 1];
 
     return age;
 }
