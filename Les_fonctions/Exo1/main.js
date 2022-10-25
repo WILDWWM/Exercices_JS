@@ -27,6 +27,6 @@ function monJourSemaine() {
     return reponse;
 }
 
-console.log(monJourSemaine());
+monJourSemaine();
 
 
