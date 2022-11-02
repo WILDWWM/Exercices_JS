@@ -54,7 +54,7 @@ section {
     text-transform: capitalize;
 }
 .bouton {
-    color: black;
+    color: #000000;
     background-color: white;
     font-size:30px;
     border:none;
