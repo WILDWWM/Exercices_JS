@@ -5,6 +5,9 @@ const imageDroite = document.getElementById("image-droite");
 const resultGauche = document.getElementById("resultat-gauche");
 const resultDroite = document.getElementById("resultat-droite");
 const boutonRejouer = document.getElementById("boutonRejouer");
+const modifTitre = document.getElementById("titre");
+const sectionGauche = document.getElementById("gauche");
+const sectionDroite = document.getElementById("droite");
 
 let imageAuPifGauche;
 let imageAuPifDroite;
@@ -13,11 +16,17 @@ let resultat;
 imageGauche.addEventListener("click", (e) => {
     imageAuPifGauche = choixElement();    
     imageGauche.style.backgroundImage = `url("./images-pfc/${imageAuPifGauche}.jpg")`;
+    sectionGauche.style.backgroundColor = "black";
+    imageGauche.style.pointerEvents = "none";
 })
 
 imageDroite.addEventListener("click", (e) => {
     imageAuPifDroite = choixElement();
     imageDroite.style.backgroundImage = `url("./images-pfc/${imageAuPifDroite}.jpg")`;
+    sectionDroite.style.backgroundColor = "black";
+    imageDroite.style.pointerEvents = "none";
+    resultGame();
+    boutonRejouer.style.display = "block";
 })
 
 function choixElement() {
@@ -49,8 +58,12 @@ function CompareResult() {
 }
 
 boutonRejouer.addEventListener("click", () => {
+    location.reload();
+})
+
+function resultGame() {
     let result = CompareResult();
-    console.log(result);
+    
     if (result == "Gagné") {
         resultGauche.style.background = "#00ff15";
         resultGauche.textContent = result;
@@ -69,4 +82,4 @@ boutonRejouer.addEventListener("click", () => {
         resultDroite.style.background = "#ffee00";
         resultDroite.textContent = result;
     }
-})
+}
