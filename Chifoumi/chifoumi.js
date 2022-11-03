@@ -18,16 +18,18 @@ imageGauche.addEventListener("click", (e) => {
     imageGauche.style.backgroundImage = `url("./images-pfc/${imageAuPifGauche}.jpg")`;
     sectionGauche.style.backgroundColor = "black";
     imageGauche.style.pointerEvents = "none";
+    jeuFinal();
 })
 
 imageDroite.addEventListener("click", (e) => {
     imageAuPifDroite = choixElement();
     imageDroite.style.backgroundImage = `url("./images-pfc/${imageAuPifDroite}.jpg")`;
     sectionDroite.style.backgroundColor = "black";
-    imageDroite.style.pointerEvents = "none";
-    resultGame();
-    boutonRejouer.style.display = "block";
+    imageDroite.style.pointerEvents = "none";   
+    jeuFinal();
 })
+
+
 
 function choixElement() {
     const nomRandom = choix[Math.floor(Math.random() * choix.length)];
@@ -81,5 +83,13 @@ function resultGame() {
         resultGauche.textContent = result;
         resultDroite.style.background = "#ffee00";
         resultDroite.textContent = result;
+    }
+    
+}
+
+function jeuFinal() {
+    if (imageGauche.style.backgroundImage === `url("./images-pfc/${imageAuPifGauche}.jpg")` && imageDroite.style.backgroundImage === `url("./images-pfc/${imageAuPifDroite}.jpg")`) {
+        resultGame();
+        setTimeout(boutonRejouer.style.display = "block", 5000);
     }
 }
