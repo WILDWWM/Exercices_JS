@@ -13,6 +13,15 @@ let imageAuPifGauche;
 let imageAuPifDroite;
 let resultat;
 
+// window.addEventListener("load", (e) => {
+    
+// })
+
+boutonRejouer.addEventListener("click", () => {    
+    reinitGame();
+    location.reload();
+})
+
 imageGauche.addEventListener("click", (e) => {
     imageAuPifGauche = choixElement();    
     imageGauche.style.backgroundImage = `url("./images-pfc/${imageAuPifGauche}.jpg")`;
@@ -59,10 +68,6 @@ function CompareResult() {
     return resultat;
 }
 
-boutonRejouer.addEventListener("click", () => {
-    location.reload();
-})
-
 function resultGame() {
     let result = CompareResult();
     
@@ -90,6 +95,13 @@ function resultGame() {
 function jeuFinal() {
     if (imageGauche.style.backgroundImage === `url("./images-pfc/${imageAuPifGauche}.jpg")` && imageDroite.style.backgroundImage === `url("./images-pfc/${imageAuPifDroite}.jpg")`) {
         resultGame();
-        setTimeout(boutonRejouer.style.display = "block", 5000);
+        setTimeout(() => { boutonRejouer.style.display = "block" }, 2000);
     }
+}
+
+function reinitGame() {
+    imageAuPifDroite = "";
+    imageAuPifGauche = "";
+    resultat = "";
+    result = "";    
 }
