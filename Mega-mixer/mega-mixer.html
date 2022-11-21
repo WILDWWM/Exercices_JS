@@ -26,34 +26,22 @@
             <label>
                 <select id="numberSelect">
                     <option value="440">2</option>
-                    <option value="660">3</option>
-                    <option value="880" selected>4</option>
+                    <option value="660" selected>3</option>
+                    <option value="880">4</option>
                     <option value="1100">5</option>
                     <option value="1320">6</option>
                 </select>
             </label>
         </div>
         <div>
-            <button id="BoutonPlacer" onclick="placerCarte();">PLACER</button>
+            <button id="BoutonPlacer">PLACER</button>
         </div>
         <div>
             <button id="BoutonInitialiser" disabled>REINITIALISER</button>
-        </div>
-        <div>
-            <button id="ButtonToDelete">BOUTON TOGGLE A EFFACER</button>
-        </div>
+        </div>        
     </div>
 
-    <div id="sizer">
-        <div class="flipcard h" id="card">
-            <div class="front interrogation">
-                ?
-            </div>
-            <div class="back smiley" style='background-image: url("images/smiley/smiley-10.png");'>
-                <div class="prenom"></div>
-                <div class="nom"></div>
-            </div>
-        </div>
+    <div id="sizer">        
     </div>
 
     <script src="dist/js/bootstrap.bundle.min.js"></script>
